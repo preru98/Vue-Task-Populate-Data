@@ -6,12 +6,13 @@
             <th>Email</th>
             <th>Query</th>
             <th>Query Date</th>
+            <th>Action</th>
         </tr>
         <tr v-for="record in repoData" :key="record.query"> <!-- Ideally it should be email -->
             <td>{{ record.email }}</td>
             <td>{{ record.query }}</td>
             <td>{{ record.createdAt }}</td>
-            
+            <td style= "text-align:center;"><img src="../assets/action.png" alt="action"></td>
         </tr>
     </table>
     <p v-else>Not available</p>
@@ -39,10 +40,7 @@ export default {
             }
         })
         .then( (response) => {   
-            console.log(response.data);
-            console.log(this);
             this.repoData = response.data.result;
-            console.log(this.repoData);
         })
         .catch( (error) => {
             console.log(error);
@@ -52,22 +50,7 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-/* h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-} */
 table {
     width :100%;
     border-collapse: collapse;
@@ -90,6 +73,5 @@ body{
 tr:nth-child(odd) {
     background-color: #F2F2F8;
 }
-
 
 </style>

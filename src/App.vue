@@ -5,13 +5,11 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 import PopulateData from './components/PopulateData'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
     PopulateData
   }
 }
